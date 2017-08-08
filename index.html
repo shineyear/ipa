@@ -47,7 +47,7 @@ $(document).ready(function(){
           </tr>
           <tr>
             <td>kind of interest: </td><td>
-              <select name="">
+              <select id="kind_of_interest">
                 <option value="pi">principle + interest</option>
                 <option value="io">interest only</option>
               </select>
@@ -84,7 +84,15 @@ $(document).ready(function(){
             <td>loan amount: </td><td><input type="text" id="loan_am" value=""></td>
           </tr>
           <tr>
-            <td>loan term: </td><td><input type="text" id="loan_term" value=""></td>
+            <td>loan term: </td><td>
+              <select id="loan_term">
+                <option value="30">30 years</option>
+                <option value="25">25 years</option>
+                <option value="20">20 years</option>
+                <option value="15">15 years</option>
+                <option value="10">10 years</option>
+              </select>
+            </td>
           </tr>
           <tr>
             <td>others: </td><td><input type="text" id="others" value=""></td>
