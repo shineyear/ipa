@@ -1,0 +1,97 @@
+<html>
+<header><title>investment portfolio analysis</title></header>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+var rowNum = 0;
+
+$(document).ready(function(){
+
+  $("#add_more").click(function(){
+    rowNum++;
+    var next = $('#property').clone(true)
+    var table = $('#property').find('table');
+    next.find('input').each(function() {
+      $(this).val("");
+    });
+    table.attr('id', 'property_' + rowNum);
+    //table.eq(0).attr('id', 'property_' + rowNum);
+    next.appendTo('#property_next');
+  });
+
+  $("#reset").click(function(){
+    var table = $(this).closest('table');
+    table.find('input').each(function() {
+      $(this).val("");
+    });
+  });
+});
+</script>
+<body>
+    <table>
+        <tr>
+          <td>tax rate: </td><td><input type="text" name="tax_rate" value=""></td>
+        </tr>
+        <tr>
+          <td>income: </td><td><input type="text" name="income" value=""></td>
+        </tr>
+    </table>
+
+    <div id="property">
+        <table id="property_0">
+          <tr><td><b>property</b></td><td><button id="reset">reset this</button></td></tr>
+          <tr>
+            <td>rental income: </td><td><input type="text" id="rental_income" value=""></td>
+          </tr>
+          <tr>
+            <td>interest expense: </td><td><input type="text" id="interest_expense" value=""></td>
+          </tr>
+          <tr>
+            <td>kind of interest: </td><td>
+              <select name="">
+                <option value="pi">principle + interest</option>
+                <option value="io">interest only</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td>concil rate:</td><td><input type="text" id="concil_rate" value=""></td>
+          </tr>
+          <tr>
+            <td>water rate:</td><td><input type="text" id="water_rate" value=""></td>
+          </tr>
+          <tr>
+            <td>management fee:</td><td><input type="text" id="management_fee" value=""></td>
+          </tr>
+          <tr>
+            <td>insurence: </td><td><input type="text" id="insurence" value=""></td>
+          </tr>
+          <tr>
+            <td>land tax: </td><td><input type="text" id="land_tax" value=""></td>
+          </tr>
+          <tr>
+            <td>building depreciation: </td><td><input type="text" id="build_d" value=""></td>
+          </tr>
+          <tr>
+            <td>mantainance: </td><td><input type="text" id="mantain" value=""></td>
+          </tr>
+          <tr>
+            <td>offsite account: </td><td><input type="text" id="off_acc" value=""></td>
+          </tr>
+          <tr>
+            <td>property purches price: </td><td><input type="text" id="price" value=""></td>
+          </tr>
+          <tr>
+            <td>loan amount: </td><td><input type="text" id="loan_am" value=""></td>
+          </tr>
+          <tr>
+            <td>loan term: </td><td><input type="text" id="loan_term" value=""></td>
+          </tr>
+          <tr>
+            <td>others: </td><td><input type="text" id="others" value=""></td>
+          </tr>
+        </table>
+    </div>
+    <div id="property_next"></div>
+    <button id="add_more">add more propertys</button><input type="submit" value="Submit">
+</body>
+</html>
